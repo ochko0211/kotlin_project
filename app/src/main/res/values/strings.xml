@@ -1,0 +1,35 @@
+<!--
+  ~ Copyright (C) 2023 The Android Open Source Project
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     https://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+<resources>
+    <string name="app_name">Толь бичиг</string>
+    <string name="гадаад_үг">Гадаад үг</string>
+    <string name="монгол_үг">Монгол үг</string>
+    <string name="нэмэх">нэмэх</string>
+    <string name="шинэчлэх">шинэчлэх</string>
+    <string name="устгах">устгах</string>
+    <string name="болих">болих</string>
+    <string name="дараа">дараа</string>
+    <string name="өмнөх">өмнөх</string>
+    <string name="оруулах">оруулах</string>
+    <string name="тохиргоо">тохиргоо</string>
+    <string name="сонголт">сонголт</string>
+    <string name="буцах">буцах</string>
+    <string name="хадгалах">хадгалах</string>
+    <string name="гадаад_үг_харуулах">гадаад үгийг харуулна</string>
+    <string name="монгол_үг_харуулах">монгол үгийг харуулна</string>
+    <string name="хоёр_харуулах">Хоёууланг харуулна</string>
+    <string name="dialog_info">Эдгээр үгийг устгах уу?</string>
+</resources>
