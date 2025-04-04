@@ -105,8 +105,6 @@ class WordListViewModel(
         }
     }
 
-    // WordListViewModel.kt
-// WordListViewModel.kt
     fun toggleShowEnglish() {
         _uiState.update { currentState ->
             currentState.copy(

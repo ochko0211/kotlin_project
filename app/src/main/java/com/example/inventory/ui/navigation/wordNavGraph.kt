@@ -7,11 +7,8 @@ import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
-import com.example.inventory.ui.Choice.ChoiceDestination
 import com.example.inventory.ui.Choice.ChoiceScreen
-import com.example.inventory.ui.edit.WordEditDestination
 import com.example.inventory.ui.edit.WordEditScreen
-import com.example.inventory.ui.home.HomeDestination
 import com.example.inventory.ui.home.HomeScreen
 
 @Composable
@@ -21,35 +18,33 @@ fun WordNavHost(
 ) {
     NavHost(
         navController = navController,
-        startDestination = HomeDestination.route,
+        startDestination = "home",
         modifier = modifier
     ) {
-        composable(route = HomeDestination.route) {
+        composable(route = "home") {
             HomeScreen(
                 navigateToEdit = { wordId ->
                     if (wordId != null) {
-                        navController.navigate("${WordEditDestination.route}/$wordId")
+                        navController.navigate("edit/$wordId")
                     } else {
-                        navController.navigate(WordEditDestination.routeWithoutArgs)
+                        navController.navigate("edit")
                     }
                 },
-                navigateToChoice = { navController.navigate(ChoiceDestination.route) }
+                navigateToChoice = { navController.navigate("choice") }
             )
         }
         composable(
-            route = WordEditDestination.routeWithArgs,
-            arguments = listOf(navArgument(WordEditDestination.wordIdArg) {
+            route = "edit/{wordId}",
+            arguments = listOf(navArgument("wordId") {
                 type = NavType.IntType
             })
         ) {
             WordEditScreen(navigateBack = { navController.popBackStack() })
         }
-        composable(
-            route = WordEditDestination.routeWithoutArgs
-        ) {
+        composable(route = "edit") {
             WordEditScreen(navigateBack = { navController.popBackStack() })
         }
-        composable(route = ChoiceDestination.route) {
+        composable(route = "choice") {
             ChoiceScreen(navigateBack = { navController.popBackStack() })
         }
     }

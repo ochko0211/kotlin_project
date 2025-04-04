@@ -1,7 +1,6 @@
 package com.example.inventory.ui.Choice
 
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
@@ -27,13 +26,7 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.inventory.R
 import com.example.inventory.ui.AppViewModelProvider
 import com.example.inventory.ui.home.WordListViewModel
-import com.example.inventory.ui.navigation.NavigationDestination
 import kotlinx.coroutines.launch
-
-object ChoiceDestination : NavigationDestination {
-    override val route = "Choice"
-    override val titleRes = R.string.тохиргоо
-}
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -46,14 +39,8 @@ fun ChoiceScreen(
 
     Scaffold(
         topBar = {
-            CenterAlignedTopAppBar(
-                title = { },
-                navigationIcon = {
-
-                }
-            )
-        },
-
+            CenterAlignedTopAppBar(title = { })
+        }
     ) { innerPadding ->
         Column(
             modifier = modifier
@@ -91,9 +78,7 @@ fun ChoiceScreen(
                     modifier = Modifier.weight(1f),
                     shape = MaterialTheme.shapes.small,
                 ) {
-                    Row(verticalAlignment = Alignment.CenterVertically) {
-                        Text(text = stringResource(R.string.буцах))
-                    }
+                    Text(text = stringResource(R.string.буцах))
                 }
 
                 Spacer(Modifier.width(8.dp))
@@ -135,6 +120,5 @@ private fun RadioRow(
             text = text,
             style = MaterialTheme.typography.bodyLarge
         )
-
     }
 }

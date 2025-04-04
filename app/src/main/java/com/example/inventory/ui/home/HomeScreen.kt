@@ -1,6 +1,5 @@
 package com.example.inventory.ui.home
 
-
 import androidx.compose.runtime.collectAsState
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.icons.Icons
@@ -17,12 +16,6 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.inventory.R
 import com.example.inventory.data.Word
 import com.example.inventory.ui.AppViewModelProvider
-import com.example.inventory.ui.navigation.NavigationDestination
-
-object HomeDestination : NavigationDestination {
-    override val route = "home"
-    override val titleRes = R.string.app_name
-}
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -37,7 +30,7 @@ fun HomeScreen(
     Scaffold(
         topBar = {
             CenterAlignedTopAppBar(
-                title = { Text(stringResource(HomeDestination.titleRes)) },
+                title = { Text(stringResource(R.string.app_name)) },
                 actions = {
                     IconButton(onClick = navigateToChoice) {
                         Icon(Icons.Filled.MoreVert, contentDescription = "")
@@ -95,7 +88,6 @@ fun HomeScreen(
     }
 }
 
-
 @Composable
 private fun TextFieldWords(
     word: Word?,
@@ -105,31 +97,27 @@ private fun TextFieldWords(
     modifier: Modifier = Modifier
 ) {
     word?.let {
-        Column(
-            horizontalAlignment = Alignment.CenterHorizontally,
-        ) {
-                TextField(
-                    value = if (showBoth || showEnglish) it.engWord else "",
-                    onValueChange = {},
-                    readOnly = true,
-                    textStyle = MaterialTheme.typography.displayMedium.copy(textAlign = TextAlign.Center),
-                    modifier = Modifier.fillMaxWidth(),
-                    singleLine = true
-                )
-            }
-
+        Column(horizontalAlignment = Alignment.CenterHorizontally) {
+            TextField(
+                value = if (showBoth || showEnglish) it.engWord else "",
+                onValueChange = {},
+                readOnly = true,
+                textStyle = MaterialTheme.typography.displayMedium.copy(textAlign = TextAlign.Center),
+                modifier = Modifier.fillMaxWidth(),
+                singleLine = true
+            )
             Spacer(modifier = Modifier.height(16.dp))
-
-                TextField(
-                    value = if (showBoth || showMongolian) it.monWord else "",
-                    onValueChange = {},
-                    readOnly = true,
-                    textStyle = MaterialTheme.typography.displayMedium.copy(textAlign = TextAlign.Center),
-                    modifier = Modifier.fillMaxWidth(),
-                    singleLine = true
-                )
-            }
+            TextField(
+                value = if (showBoth || showMongolian) it.monWord else "",
+                onValueChange = {},
+                readOnly = true,
+                textStyle = MaterialTheme.typography.displayMedium.copy(textAlign = TextAlign.Center),
+                modifier = Modifier.fillMaxWidth(),
+                singleLine = true
+            )
         }
+    }
+}
 
 @Composable
 private fun ActionButtons(

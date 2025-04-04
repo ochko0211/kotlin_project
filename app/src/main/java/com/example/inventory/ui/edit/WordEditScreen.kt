@@ -1,7 +1,6 @@
 package com.example.inventory.ui.edit
 
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
@@ -39,11 +38,7 @@ fun WordEditScreen(
 
     Scaffold(
         topBar = {
-            CenterAlignedTopAppBar(
-                title = {  },
-                navigationIcon = {
-                }
-            )
+            CenterAlignedTopAppBar(title = { })
         }
     ) { innerPadding ->
         Column(
@@ -58,7 +53,6 @@ fun WordEditScreen(
                 onValueChange = { viewModel.updateEngWord(it) },
                 label = { Text(stringResource(R.string.гадаад_үг)) },
                 modifier = Modifier.fillMaxWidth()
-
             )
 
             TextField(
@@ -93,7 +87,6 @@ fun WordEditScreen(
                             navigateBack()
                         }
                     },
-
                     modifier = Modifier.weight(1f),
                     shape = MaterialTheme.shapes.small
                 ) {
